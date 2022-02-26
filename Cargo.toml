@@ -1,0 +1,34 @@
+[package]
+name = "eth-utils"
+version = "0.0.1"
+authors = []
+edition = "2021"
+license = "MIT"
+description = "..."
+homepage = "https://github.com/ccmlm/eth-utils"
+repository = "https://github.com/ccmlm/eth-utils.git"
+keywords = ["eth", "evm", "ecdsa"]
+categories = ["data-structures", "algorithms"]
+
+[dependencies]
+ruc = "1.0.5"
+rand = "0.8.5"
+byteorder = "1.4.3"
+serde = { version = "1.0.136", features = ["derive"] }
+
+bip32 = "0.3.0"
+bip0039 = "0.10.1"
+
+hex = "0.4.3"
+base64 = "0.13.0"
+
+sha3 = "0.10.1"
+twox-hash = "1.6.0"
+blake2-rfc = "0.2.18"
+tiny-keccak = { version = "2.0", features = ["keccak"] }
+libsecp256k1 = { version = "0.7.0", features = ["static-context", "hmac"] }
+primitive-types = { version = "0.10.1", default-features = false, features = ["rlp", "byteorder", "serde"] }
+
+[dev-dependencies]
+hex-literal = "0.3.1"
+serde_json = "1.0"

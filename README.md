@@ -1,1 +1,1 @@
-# ecdsa-utils
+# eth-utils
