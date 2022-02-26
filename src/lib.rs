@@ -1,5 +1,5 @@
 #![deny(warnings)]
 
-mod key;
+pub mod ecdsa_keys;
 
-pub use key::*;
+pub use evm_precompiles;
