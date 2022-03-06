@@ -16,6 +16,9 @@ test:
 	cargo test -- --test-threads=1
 
 fmt:
+	cargo +nightly fmt
+
+fmtall:
 	bash tools/fmt.sh
 
 update:
