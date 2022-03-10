@@ -1,6 +1,6 @@
 [package]
 name = "eth-utils"
-version = "0.3.0"
+version = "0.3.1"
 authors = []
 edition = "2021"
 license = "MIT"
@@ -39,7 +39,7 @@ ovr-evm-precompile-blake2 = { version = "2.0.0", optional = true }
 ovr-evm-test-vector-support = { version = "1.0.0", optional = true }
 ovr-fp-evm = { version = "3.0.0", optional = true }
 
-evm-precompile-utils = { package = "evm-precompiles", version = "0.2.1", optional = true }
+precompile-utils = { package = "evm-precompiles", version = "0.2.1", optional = true }
 
 [dev-dependencies]
 hex-literal = "0.3.1"
@@ -58,4 +58,4 @@ with_common_precompiles = [
     "ovr-evm-test-vector-support",
     "ovr-fp-evm",
 ]
-with_precompile_utils = ["evm-precompile-utils"]
+with_precompile_utils = ["precompile-utils"]
