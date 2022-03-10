@@ -9,8 +9,8 @@ release:
 	cargo build --release
 
 lint:
-	cargo clippy
-	cargo clippy --tests
+	cargo clippy --features="with_precompile_utils,with_common_precompiles"
+	cargo clippy --tests --features="with_precompile_utils,with_common_precompiles"
 
 test:
 	cargo test -- --test-threads=1
