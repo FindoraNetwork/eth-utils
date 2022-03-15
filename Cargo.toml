@@ -1,12 +1,12 @@
 [package]
 name = "eth-utils"
-version = "0.3.2"
+version = "0.3.3"
 authors = []
 edition = "2021"
 license = "MIT"
 description = "..."
-homepage = "https://github.com/ccmlm/eth-utils"
-repository = "https://github.com/ccmlm/eth-utils.git"
+homepage = "https://github.com/Overealityio/eth-utils"
+repository = "https://github.com/Overealityio/eth-utils.git"
 keywords = ["eth", "evm", "ecdsa"]
 categories = ["data-structures", "algorithms"]
 
