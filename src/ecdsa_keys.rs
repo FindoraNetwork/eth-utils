@@ -1,8 +1,9 @@
 use bip0039::{Count, Language, Mnemonic};
 use bip32::{DerivationPath, XPrv};
-use core::cmp::Ordering;
-use core::convert::{TryFrom, TryInto};
-use core::hash::{Hash, Hasher};
+use core::{
+    cmp::Ordering,
+    hash::{Hash, Hasher},
+};
 use hashing::keccak_256;
 use libsecp256k1::{PublicKey, SecretKey};
 use primitive_types::{H160, H256};
@@ -10,7 +11,7 @@ use rand::{rngs::OsRng, RngCore};
 use ruc::eg;
 use serde::{de, Deserialize, Deserializer, Serialize, Serializer};
 use sha3::{Digest, Keccak256};
-use std::str::FromStr;
+use std::{fmt, str::FromStr};
 
 /// A secret seed (which is bytewise essentially equivalent to a SecretKey).
 ///
@@ -48,7 +49,7 @@ impl Default for Public {
 }
 
 impl std::fmt::Debug for Public {
-    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
+    fn fmt(&self, f: &mut std::fmt::Formatter) -> fmt::Result {
         write!(
             f,
             "{}",
@@ -121,7 +122,6 @@ impl AsMut<[u8]> for Public {
 
 impl TryFrom<&[u8]> for Public {
     type Error = ();
-
     fn try_from(data: &[u8]) -> Result<Self, Self::Error> {
         if data.len() == 33 {
             let mut r = [0u8; 33];
@@ -193,7 +193,7 @@ impl PartialEq for Signature {
 impl Eq for Signature {}
 
 impl std::fmt::Debug for Signature {
-    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
+    fn fmt(&self, f: &mut std::fmt::Formatter) -> fmt::Result {
         write!(f, "{}", hex::encode(self))
     }
 }
@@ -270,8 +270,7 @@ impl<'a> TryFrom<&'a Signature> for (libsecp256k1::Signature, libsecp256k1::Reco
     type Error = ();
     fn try_from(
         x: &'a Signature,
-    ) -> core::result::Result<(libsecp256k1::Signature, libsecp256k1::RecoveryId), Self::Error>
-    {
+    ) -> Result<(libsecp256k1::Signature, libsecp256k1::RecoveryId), Self::Error> {
         Ok((
             libsecp256k1::Signature::parse_standard_slice(&x.0[0..64])
                 .expect("hardcoded to 64 bytes; qed"),
