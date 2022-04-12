@@ -4,9 +4,9 @@ use core::{
     cmp::Ordering,
     hash::{Hash, Hasher},
 };
+use ethereum_types::{H160, H256};
 use hashing::keccak_256;
 use libsecp256k1::{PublicKey, SecretKey};
-use primitive_types::{H160, H256};
 use rand::{rngs::OsRng, RngCore};
 use ruc::eg;
 use serde::{de, Deserialize, Deserializer, Serialize, Serializer};
