@@ -6,20 +6,17 @@ pub mod ecdsa_keys;
 pub use precompile_utils;
 
 #[cfg(feature = "with_common_precompiles")]
-pub use ovr_evm_precompile_blake2;
+pub use pub_use::*;
+
 #[cfg(feature = "with_common_precompiles")]
-pub use ovr_evm_precompile_bn128;
-#[cfg(feature = "with_common_precompiles")]
-pub use ovr_evm_precompile_curve25519;
-#[cfg(feature = "with_common_precompiles")]
-pub use ovr_evm_precompile_ed25519;
-#[cfg(feature = "with_common_precompiles")]
-pub use ovr_evm_precompile_modexp;
-#[cfg(feature = "with_common_precompiles")]
-pub use ovr_evm_precompile_sha3fips;
-#[cfg(feature = "with_common_precompiles")]
-pub use ovr_evm_precompile_simple;
-#[cfg(feature = "with_common_precompiles")]
-pub use ovr_evm_test_vector_support;
-#[cfg(feature = "with_common_precompiles")]
-pub use ovr_fp_evm;
+mod pub_use {
+    pub use ruc_evm_precompile_blake2 as evm_precompile_blake2;
+    pub use ruc_evm_precompile_bn128 as evm_precompile_bn128;
+    pub use ruc_evm_precompile_curve25519 as evm_precompile_curve25519;
+    pub use ruc_evm_precompile_ed25519 as evm_precompile_ed25519;
+    pub use ruc_evm_precompile_modexp as evm_precompile_modexp;
+    pub use ruc_evm_precompile_sha3fips as evm_precompile_sha3fips;
+    pub use ruc_evm_precompile_simple as evm_precompile_simple;
+    pub use ruc_evm_test_vector_support as evm_test_vector_support;
+    pub use ruc_fp_evm as fp_evm;
+}
