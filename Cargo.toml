@@ -11,7 +11,7 @@ keywords = ["eth", "evm", "ecdsa"]
 categories = ["data-structures", "algorithms"]
 
 [dependencies]
-ruc = "2.0.0"
+ruc = "3.0.0"
 rand = "0.8.5"
 byteorder = "1.4.3"
 serde = { version = "1.0.136", features = ["derive"] }
