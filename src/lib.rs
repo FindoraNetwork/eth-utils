@@ -14,6 +14,7 @@ mod pub_use {
     pub use ruc_evm_precompile_bn128 as evm_precompile_bn128;
     pub use ruc_evm_precompile_curve25519 as evm_precompile_curve25519;
     pub use ruc_evm_precompile_ed25519 as evm_precompile_ed25519;
+    pub use ruc_evm_precompile_ethpairing as evm_precompile_ethpairing;
     pub use ruc_evm_precompile_modexp as evm_precompile_modexp;
     pub use ruc_evm_precompile_sha3fips as evm_precompile_sha3fips;
     pub use ruc_evm_precompile_simple as evm_precompile_simple;
